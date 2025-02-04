@@ -5,7 +5,7 @@ VALUES
 (default, 'FR', 'France'),         -- id = 1
 (default, 'UK', 'United Kingdom'), -- id = 2
 (default, 'US', 'United States of America'),
-(default, 'CD', 'Canada');
+(default, 'CA', 'Canada');
 -- id = 3
 -- On peut fixer la valeur des clés auto-générées, mais il faudrait ensuite
 -- réinitialiser le compteur de clé auto-générée

@@ -11,6 +11,8 @@ import lombok.*;
 // cf. https://examples.javacodegeeks.com/spring-boot-with-lombok/
 @Getter @Setter @NoArgsConstructor @RequiredArgsConstructor @ToString
 @Entity // Une entité JPA
+
+
 public class Country {
     // Identifiant technique
     @Id  @GeneratedValue(strategy = GenerationType.IDENTITY) 
@@ -23,4 +25,14 @@ public class Country {
     @Column(unique=true)
     @NonNull
     private String name;
+
+    // Dans la classe "Country.java"
+    @OneToMany(mappedBy="country")      //lier country a city
+
+    // @OneToMany
+    // Lombok https://www.projectlombok.org/features/ToString
+    @ToString.Exclude // On ne veut pas inclure la liste des villes dans le toString
+    // Sinon récursivité infinie
+    private List<City> cities = new ArrayList<>();
+
 }
